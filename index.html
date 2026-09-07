@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b76f6">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="google" content="notranslate">
   <link rel="canonical" href="https://example.com/">
+
   <title>JUN88 – Nhà cái thể thao & game trực tuyến</title>
   <meta name="description" content="JUN88 – Trải nghiệm thể thao, game bài, nổ hũ, bắn cá và nhiều trò chơi trực tuyến với giao diện hiện đại.">
+  <meta name="keywords" content="JUN88, thể thao, nổ hũ, bắn cá, game bài, xổ số, casino">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="vi_VN">
   <meta property="og:title" content="JUN88 – Nhà cái thể thao & game trực tuyến">
@@ -19,7 +22,6 @@
   <meta name="twitter:description" content="Khám phá các game hot, trận đấu nổi bật và ưu đãi tại JUN88.">
   <meta name="twitter:image" content="https://example.com/og.jpg">
 
-  <!-- Google Fonts: hỗ trợ tiếng Việt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
@@ -33,144 +35,432 @@
       --muted:#60708b;
       --white:#fff;
       --bg:#f4f8ff;
-      --card:#ffffff;
+      --card:#fff;
       --line:rgba(22,85,150,.12);
       --shadow:0 20px 60px rgba(11,61,126,.14);
       --radius:24px;
       --container:1180px;
+
+      /* Background URLs: JS sẽ ghi đè từ SITE_CONFIG */
+      --hero-bg:none;
+      --sports-left-bg:none;
+      --sports-right-bg:none;
+      --sports-bg:none;
+      --games-bg:none;
+      --reasons-bg:none;
+      --reviews-bg:none;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:"Be Vietnam Pro",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+    body{
+      margin:0;
+      font-family:"Be Vietnam Pro",Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .container{width:min(var(--container),calc(100% - 32px));margin:auto}
+    button,input{font:inherit}
+    .container{width:min(var(--container),calc(100% - 32px));margin-inline:auto}
     .section{position:relative;padding:88px 0;overflow:hidden}
-    .section::before{content:"";position:absolute;inset:auto -20% -60% auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(21,185,255,.16),transparent 68%);pointer-events:none}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);background:rgba(11,118,246,.08);padding:8px 12px;border-radius:999px}
-    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 6px rgba(11,118,246,.1)}
+    .section::before{
+      content:"";
+      position:absolute;
+      inset:auto -20% -60% auto;
+      width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(21,185,255,.16),transparent 68%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--primary);background:rgba(11,118,246,.08);
+      padding:8px 12px;border-radius:999px;
+    }
+    .eyebrow::before{
+      content:"";width:7px;height:7px;border-radius:50%;
+      background:var(--primary);box-shadow:0 0 0 6px rgba(11,118,246,.1)
+    }
     h1,h2,h3,p{margin:0}
-    .section-head{text-align:center;max-width:820px;margin:0 auto 42px;position:relative;z-index:2}
-    .section-head h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(42px,6vw,70px);line-height:.95;text-transform:uppercase;letter-spacing:-.02em;margin:15px 0 14px;color:var(--navy)}
+    .section-head{
+      text-align:center;max-width:820px;margin:0 auto 42px;
+      position:relative;z-index:2
+    }
+    .section-head h2{
+      font-family:"Barlow Condensed",sans-serif;
+      font-size:clamp(42px,6vw,70px);line-height:.95;
+      text-transform:uppercase;letter-spacing:-.02em;
+      margin:15px 0 14px;color:var(--navy)
+    }
     .section-head h2 span{color:var(--primary)}
     .section-head p{color:var(--muted);font-size:15px}
 
-    /* HERO */
-    .hero{min-height:400px;padding:46px 0 80px;background:
-      radial-gradient(circle at 15% 40%,rgba(17,175,255,.25),transparent 32%),
-      linear-gradient(135deg,#071b3d 0%,#0b3d87 50%,#0b76f6 100%);color:#fff;position:relative;isolation:isolate}
-    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 92%);z-index:-1}
-    .hero::after{content:"";position:absolute;right:-120px;top:-150px;width:560px;height:560px;border-radius:50%;background:conic-gradient(from 20deg,rgba(255,255,255,.22),transparent 55%,rgba(21,185,255,.22));filter:blur(2px);z-index:-1}
-    .hero-top{display:flex;justify-content:center}
-    .brand{display:inline-flex;align-items:center;gap:12px;font-size:26px;font-weight:900;letter-spacing:.06em;color:#fff}
-    .brand-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#18c5ff,#0876f4);display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.18);position:relative;overflow:hidden}
-    .brand-mark::after{content:"J";font-family:"Barlow Condensed";font-size:36px;font-weight:800;color:#fff;transform:translateY(-1px)}
-    .hero-copy{text-align:center;max-width:920px;margin:34px auto 0}
-    .hero-copy .eyebrow{color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
-    .hero-copy .eyebrow::before{background:#5ad4ff;box-shadow:0 0 0 6px rgba(90,212,255,.13)}
-    .hero h1{font-family:"Barlow Condensed";font-size:clamp(40px,6vw,80px);line-height:.84;text-transform:uppercase;letter-spacing:-.03em;margin:22px 0 18px}
-    .hero h1 span{display:block;color:#57d4ff;text-shadow:0 0 30px rgba(87,212,255,.32)}
+    /* =========================
+       SECTION 1 — HERO
+       ========================= */
+    .hero{
+      min-height:680px;
+      padding:46px 0 80px;
+      position:relative;
+      isolation:isolate;
+      color:#fff;
+      overflow:hidden;
+      background:
+        linear-gradient(135deg,rgba(7,27,61,.90),rgba(11,61,135,.72)),
+        var(--hero-bg),
+        linear-gradient(135deg,#071b3d 0%,#0b3d87 50%,#0b76f6 100%);
+      background-size:cover,cover,cover;
+      background-position:center;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom,black,transparent 92%);
+      z-index:-1;
+    }
+    .hero::after{
+      content:"";position:absolute;right:-120px;top:-150px;
+      width:560px;height:560px;border-radius:50%;
+      background:conic-gradient(from 20deg,rgba(255,255,255,.22),transparent 55%,rgba(21,185,255,.22));
+      filter:blur(2px);z-index:-1
+    }
+    .hero-top{display:flex;justify-content:center;position:relative;z-index:2}
+    .brand{
+      display:inline-flex;align-items:center;gap:12px;
+      font-size:26px;font-weight:900;letter-spacing:.06em;color:#fff
+    }
+    .brand-logo{
+      width:150px;height:52px;object-fit:contain;
+      filter:drop-shadow(0 12px 28px rgba(0,0,0,.18))
+    }
+    .brand-fallback{
+      width:46px;height:46px;border-radius:14px;
+      background:linear-gradient(135deg,#18c5ff,#0876f4);
+      display:grid;place-items:center;
+      box-shadow:0 10px 28px rgba(0,0,0,.18);
+      overflow:hidden
+    }
+    .brand-fallback::after{
+      content:"J";font-family:"Barlow Condensed";
+      font-size:36px;font-weight:800;color:#fff;transform:translateY(-1px)
+    }
+    .hero-copy{text-align:center;max-width:920px;margin:34px auto 0;position:relative;z-index:2}
+    .hero-copy .eyebrow{
+      color:#fff;background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.14)
+    }
+    .hero-copy .eyebrow::before{
+      background:#5ad4ff;box-shadow:0 0 0 6px rgba(90,212,255,.13)
+    }
+    .hero h1{
+      font-family:"Barlow Condensed";
+      font-size:clamp(40px,6vw,80px);line-height:.84;
+      text-transform:uppercase;letter-spacing:-.03em;margin:22px 0 18px
+    }
+    .hero h1 span{
+      display:block;color:#57d4ff;
+      text-shadow:0 0 30px rgba(87,212,255,.32)
+    }
     .hero-copy p{max-width:730px;margin:0 auto;color:rgba(255,255,255,.76);font-size:16px}
     .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.25s ease;position:relative;overflow:hidden}
-    .btn::after{content:"";position:absolute;top:-20%;left:-120%;width:60%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);transition:.55s ease}
-    .btn:hover::after{left:125%}.btn:hover{transform:translateY(-3px)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:50px;padding:0 22px;border-radius:999px;
+      font-weight:800;border:1px solid transparent;
+      transition:transform .25s ease,box-shadow .25s ease;
+      position:relative;overflow:hidden
+    }
+    .btn::after{
+      content:"";position:absolute;top:-20%;left:-120%;
+      width:60%;height:140%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+      transform:skewX(-20deg);transition:.55s ease
+    }
+    .btn:hover::after{left:125%}
+    .btn:hover{transform:translateY(-3px)}
     .btn-primary{background:#fff;color:var(--primary);box-shadow:0 12px 34px rgba(0,0,0,.18)}
     .btn-ghost{color:#fff;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06)}
 
-    .stat{padding:18px 16px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px);text-align:center}
-    .stat strong{display:block;font-size:24px}.stat span{font-size:12px;color:rgba(255,255,255,.62)}
-
-    /* SECTION 3 SCOREBOARD */
-    .sports{background:linear-gradient(#f4f8ff,#edf5ff)}
-    .sports-grid{display:grid;grid-template-columns:1fr minmax(520px,1.55fr) 1fr;gap:20px;align-items:stretch}
-    .promo-card,.scoreboard{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
-    .promo-card{min-height:470px;position:relative;color:#fff;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,#0b4ca1,#0a1c44 75%)}
-    .promo-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 18%,rgba(97,216,255,.55),transparent 28%),linear-gradient(140deg,transparent 0 48%,rgba(87,212,255,.12) 49% 100%);opacity:.9}
-    .promo-card::after{content:"⚡";position:absolute;right:28px;top:26px;font-size:88px;transform:rotate(-12deg);opacity:.25}
-    .promo-inner{position:relative;z-index:1}.promo-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.68}.promo-card h3{font-family:"Barlow Condensed";font-size:46px;line-height:.9;text-transform:uppercase;margin:10px 0}.promo-card p{font-size:13px;color:rgba(255,255,255,.7)}
-    .promo-card .mini-btn{margin-top:16px;display:inline-flex;padding:9px 13px;border-radius:999px;background:#51d6ff;color:#052153;font-weight:900;font-size:12px}
+    /* =========================
+       SECTION 3 — SPORTS
+       ========================= */
+    .sports{
+      background:
+        linear-gradient(rgba(244,248,255,.92),rgba(237,245,255,.96)),
+        var(--sports-bg),
+        linear-gradient(#f4f8ff,#edf5ff);
+      background-size:cover,cover,cover;
+      background-position:center;
+    }
+    .sports-grid{
+      display:grid;grid-template-columns:1fr minmax(520px,1.55fr) 1fr;
+      gap:20px;align-items:stretch;position:relative;z-index:1
+    }
+    .promo-card,.scoreboard{
+      border-radius:24px;overflow:hidden;
+      box-shadow:var(--shadow);border:1px solid var(--line)
+    }
+    .promo-card{
+      min-height:470px;position:relative;color:#fff;padding:24px;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      background:
+        linear-gradient(160deg,rgba(6,34,78,.18),rgba(4,16,38,.82)),
+        var(--sports-left-bg),
+        linear-gradient(160deg,#0b4ca1,#0a1c44 75%);
+      background-size:cover,cover,cover;background-position:center
+    }
+    .promo-card.right{
+      background:
+        linear-gradient(160deg,rgba(2,29,57,.18),rgba(3,17,38,.82)),
+        var(--sports-right-bg),
+        linear-gradient(160deg,#00a6d8,#062147 75%);
+    }
+    .promo-card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 75% 18%,rgba(97,216,255,.25),transparent 28%);
+      pointer-events:none
+    }
+    .promo-card::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 28%,rgba(0,0,0,.28) 100%);
+      pointer-events:none
+    }
+    .promo-inner{position:relative;z-index:1}
+    .promo-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+    .promo-card h3{
+      font-family:"Barlow Condensed";font-size:46px;line-height:.9;
+      text-transform:uppercase;margin:10px 0
+    }
+    .promo-card p{font-size:13px;color:rgba(255,255,255,.78);max-width:320px}
+    .mini-btn{
+      margin-top:16px;display:inline-flex;padding:9px 13px;border-radius:999px;
+      background:#51d6ff;color:#052153;font-weight:900;font-size:12px;
+      transition:transform .25s ease,box-shadow .25s ease
+    }
+    .mini-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
 
     .scoreboard{background:#fff}
-    .score-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px}
-    .score-head strong{font-size:18px}.live-pill{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;background:#eff8ff;color:var(--primary);padding:7px 10px;border-radius:999px}
-    .score-subhead{padding:10px 20px;background:#f6f9fd;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
-    .match{padding:16px 20px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center}.match:last-child{border-bottom:0}
-    .league{width:56px;height:56px;border-radius:16px;background:linear-gradient(145deg,#dff4ff,#edf2ff);display:grid;place-items:center;font-size:20px}.match-main strong{display:block;font-size:13px}.match-main span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.score{font-weight:900;font-size:24px;letter-spacing:-.04em;white-space:nowrap}.score small{font-size:10px;color:#2a9d69;display:block;text-align:right;letter-spacing:.08em;text-transform:uppercase}
+    .score-head{
+      padding:18px 20px;border-bottom:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;gap:14px
+    }
+    .score-head strong{font-size:18px}
+    .live-pill{
+      font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+      background:#eff8ff;color:var(--primary);padding:7px 10px;border-radius:999px
+    }
+    .score-subhead{
+      padding:10px 20px;background:#f6f9fd;border-bottom:1px solid var(--line);
+      font-size:11px;color:var(--muted);display:flex;justify-content:space-between
+    }
+    .match{
+      padding:16px 20px;border-bottom:1px solid var(--line);
+      display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center
+    }
+    .match:last-child{border-bottom:0}
+    .league{
+      width:56px;height:56px;border-radius:16px;
+      background:linear-gradient(145deg,#dff4ff,#edf2ff);
+      display:grid;place-items:center;font-size:20px
+    }
+    .match-main strong{display:block;font-size:13px}
+    .match-main span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+    .score{font-weight:900;font-size:24px;letter-spacing:-.04em;white-space:nowrap}
+    .score small{
+      font-size:10px;color:#2a9d69;display:block;text-align:right;
+      letter-spacing:.08em;text-transform:uppercase
+    }
 
-    /* GAME GRID */
-    .games{background:#fff}
-    .game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .game-card{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 14px 34px rgba(9,55,108,.08);transition:.25s ease}.game-card:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(9,55,108,.16)}
+    /* =========================
+       SECTION 4 — GAMES
+       ========================= */
+    .games{
+      background:
+        linear-gradient(rgba(255,255,255,.90),rgba(248,252,255,.96)),
+        var(--games-bg),
+        #fff;
+      background-size:cover,cover,cover;background-position:center
+    }
+    .game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:1}
+    .game-card{
+      border-radius:22px;overflow:hidden;border:1px solid var(--line);
+      background:#fff;box-shadow:0 14px 34px rgba(9,55,108,.08);
+      transition:transform .25s ease,box-shadow .25s ease
+    }
+    .game-card:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(9,55,108,.16)}
     .game-visual{
-    aspect-ratio:1.25/1;
-    position:relative;
-    transition:transform .45s ease;
-    overflow:hidden;
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
-}
+      aspect-ratio:1.25/1;position:relative;overflow:hidden;
+      background-position:center;background-size:cover;background-repeat:no-repeat;
+      transition:transform .45s ease
+    }
+    .game-card:hover .game-visual{transform:scale(1.025)}
+    .game-visual::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(4,28,65,.04) 15%,rgba(4,28,65,.58) 100%);
+      z-index:0
+    }
+    .g-badge{
+      position:absolute;right:15px;top:14px;padding:7px 9px;
+      background:rgba(255,255,255,.9);border-radius:999px;color:#0a58a8;
+      font-size:10px;font-weight:900;z-index:2
+    }
+    .game-body{padding:18px}
+    .game-body h3{font-size:18px}
+    .game-body p{font-size:12px;color:var(--muted);margin-top:6px}
+    .game-body .link{
+      display:inline-flex;align-items:center;gap:6px;margin-top:12px;
+      font-size:12px;color:var(--primary);font-weight:900
+    }
 
-.game-visual::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        180deg,
-        rgba(4,28,65,.05) 20%,
-        rgba(4,28,65,.55) 100%
-    );
-    z-index:0;
-}
+    /* =========================
+       SECTION 5 — REASONS
+       ========================= */
+    .reasons{
+      background:
+        linear-gradient(rgba(232,244,255,.92),rgba(224,240,255,.96)),
+        var(--reasons-bg),
+        linear-gradient(180deg,#edf5ff,#e6f1ff);
+      background-size:cover,cover,cover;background-position:center
+    }
+    .reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+    .reason{
+      padding:28px;border-radius:22px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(32,113,202,.13);
+      box-shadow:0 14px 30px rgba(9,55,108,.07)
+    }
+    .reason .ico{
+      width:46px;height:46px;border-radius:15px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#0b76f6,#45d6ff);
+      color:#fff;font-size:21px;box-shadow:0 9px 22px rgba(11,118,246,.23)
+    }
+    .reason h3{margin-top:18px;font-size:18px}
+    .reason p{color:var(--muted);font-size:13px;margin-top:7px}
 
-.g-badge{
-    position:absolute;
-    right:15px;
-    top:14px;
-    padding:7px 9px;
-    background:rgba(255,255,255,.88);
-    border-radius:999px;
-    color:#0a58a8;
-    font-size:10px;
-    font-weight:900;
-    z-index:2;
-}
-    .g-icon{position:absolute;left:20px;bottom:18px;font-size:72px;filter:drop-shadow(0 12px 12px rgba(0,0,0,.18));z-index:1}.g-badge{position:absolute;right:15px;top:14px;padding:7px 9px;background:rgba(255,255,255,.85);border-radius:999px;color:#0a58a8;font-size:10px;font-weight:900;z-index:1}
-    .game-body{padding:18px}.game-body h3{font-size:18px}.game-body p{font-size:12px;color:var(--muted);margin-top:6px}.game-body .link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;color:var(--primary);font-weight:900}
+    /* =========================
+       SECTION 6 — REVIEWS
+       ========================= */
+    .reviews{
+      background:
+        linear-gradient(rgba(3,18,45,.90),rgba(3,18,45,.94)),
+        var(--reviews-bg),
+        #071a38;
+      background-size:cover,cover,cover;background-position:center;
+      color:#fff
+    }
+    .reviews .section-head h2{color:#fff}
+    .reviews .section-head p{color:rgba(255,255,255,.64)}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+    .review{
+      padding:24px;border-radius:22px;
+      background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+      border:1px solid rgba(255,255,255,.1)
+    }
+    .stars{color:#59d7ff;letter-spacing:.15em;font-size:12px}
+    .review p{font-size:14px;color:rgba(255,255,255,.82);margin:14px 0 20px}
+    .person{display:flex;align-items:center;gap:12px}
+    .avatar{
+      width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,#58dcff,#1978ff);font-weight:900
+    }
+    .person strong{display:block;font-size:12px}
+    .person span{display:block;font-size:11px;color:rgba(255,255,255,.48)}
 
-    /* REASONS */
-    .reasons{background:linear-gradient(180deg,#edf5ff,#e6f1ff)}
-    .reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.reason{padding:28px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(32,113,202,.13);box-shadow:0 14px 30px rgba(9,55,108,.07)}
-    .reason .ico{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#0b76f6,#45d6ff);color:#fff;font-size:21px;box-shadow:0 9px 22px rgba(11,118,246,.23)}.reason h3{margin-top:18px;font-size:18px}.reason p{color:var(--muted);font-size:13px;margin-top:7px}
+    .footer-cta{
+      padding:66px 0;
+      background:linear-gradient(135deg,#0b76f6,#13c4f6);
+      color:#fff;text-align:center
+    }
+    .footer-cta h2{
+      font-family:"Barlow Condensed";font-size:clamp(40px,6vw,64px);
+      text-transform:uppercase;line-height:.95
+    }
+    .footer-cta p{
+      max-width:700px;margin:12px auto 24px;
+      color:rgba(255,255,255,.78);font-size:14px
+    }
+    footer{background:#05142d;color:rgba(255,255,255,.5);padding:24px 0;font-size:11px}
+    .footer-row{display:flex;justify-content:space-between;gap:16px;align-items:center}
 
-    /* TESTIMONIALS */
-    .reviews{background:#071a38;color:#fff}.reviews .section-head h2{color:#fff}.reviews .section-head p{color:rgba(255,255,255,.64)}
-    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{padding:24px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.1)}
-    .stars{color:#59d7ff;letter-spacing:.15em;font-size:12px}.review p{font-size:14px;color:rgba(255,255,255,.82);margin:14px 0 20px}.person{display:flex;align-items:center;gap:12px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#58dcff,#1978ff);font-weight:900}.person strong{display:block;font-size:12px}.person span{display:block;font-size:11px;color:rgba(255,255,255,.48)}
+    [data-reveal]{
+      opacity:0;transform:translateY(26px);
+      transition:opacity .7s ease,transform .7s ease
+    }
+    [data-reveal].is-visible{opacity:1;transform:none}
 
-    .footer-cta{padding:66px 0;background:linear-gradient(135deg,#0b76f6,#13c4f6);color:#fff;text-align:center}.footer-cta h2{font-family:"Barlow Condensed";font-size:clamp(40px,6vw,64px);text-transform:uppercase;line-height:.95}.footer-cta p{max-width:700px;margin:12px auto 24px;color:rgba(255,255,255,.78);font-size:14px}
-    footer{background:#05142d;color:rgba(255,255,255,.5);padding:24px 0;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:16px;align-items:center}
+    @media (max-width:1020px){
+      .sports-grid{grid-template-columns:1fr}
+      .promo-card{min-height:300px}
+      .game-grid{grid-template-columns:repeat(2,1fr)}
+      .reason-grid,.review-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:700px){
+      .hero{min-height:600px;padding-top:36px}
+      .brand-logo{width:130px;height:46px}
+      .section{padding:64px 0}
+      .game-grid,.reason-grid,.review-grid{grid-template-columns:1fr}
+      .score-head{align-items:flex-start}
+      .footer-row{flex-direction:column;text-align:center}
+      .match{grid-template-columns:44px 1fr auto}
+      .league{width:44px;height:44px}
+      .score{font-size:20px}
+    }
 
-    [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}[data-reveal].is-visible{opacity:1;transform:none}
-
-    @media (max-width:1020px){.sports-grid{grid-template-columns:1fr;}.promo-card{min-height:260px}.game-grid{grid-template-columns:repeat(2,1fr)}.reason-grid,.review-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:700px){.hero{min-height:600px;padding-top:36px}.section{padding:64px 0}.game-grid,.reason-grid,.review-grid{grid-template-columns:1fr}.score-head{align-items:flex-start}.footer-row{flex-direction:column;text-align:center}.match{grid-template-columns:44px 1fr auto}.league{width:44px;height:44px}.score{font-size:20px}}
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <!--
+    ============================================================
+    JUN88 LANDING TEMPLATE
+    CHỈ CẦN CHỈNH KHU VỰC SITE_CONFIG Ở CUỐI FILE.
+    ẢNH CHÍNH:
+      assets.logo       = logo
+      assets.heroBg     = nền Section 1
+      assets.leftPromo  = ảnh khối trái Section 3
+      assets.rightPromo = ảnh khối phải Section 3
+    Các nền section khác cũng gom tại assets.
+    ============================================================
+  -->
+
+  <!-- SECTION 1 -->
   <header class="hero" id="home">
     <div class="container">
       <div class="hero-top">
-        <a class="brand js-logo" href="#home" aria-label="JUN88 trang chủ"><span class="brand-mark"></span><span>JUN88</span></a>
+        <a class="brand js-logo" href="#home" aria-label="JUN88 trang chủ">
+          <span class="brand-fallback" aria-hidden="true"></span>
+        </a>
       </div>
+
       <div class="hero-copy" data-reveal>
         <div class="eyebrow">Thể thao • Casino • Giải trí</div>
         <h1>JUN88 Thể thao <span>dự đoán tỷ số bóng đá</span></h1>
-        <pJun88 Thể Thao – nền tảng cá cược trực tuyến hàng đầu dành cho những tín đồ thể thao chân chính</p>
+        <p>JUN88 Thể Thao – nền tảng cá cược trực tuyến dành cho những tín đồ thể thao.</p>
+
         <div class="cta-row">
-          <a class="btn btn-primary js-link" data-link="register" href="#">ĐĂNG KÝ NGAY <span>↗</span></a>
-          <a class="btn btn-ghost js-link" data-link="login" href="#">ĐĂNG NHẬP <span>↗</span></a>
+          <a class="btn btn-primary js-link" data-link="register" href="#">
+            ĐĂNG KÝ NGAY <span>↗</span>
+          </a>
+          <a class="btn btn-ghost js-link" data-link="login" href="#">
+            ĐĂNG NHẬP <span>↗</span>
+          </a>
         </div>
       </div>
     </div>
@@ -183,29 +473,38 @@
         <div class="section-head" data-reveal>
           <div class="eyebrow">Section 3 • Live Sports</div>
           <h2>Tỷ số các trận đấu <span>đang hot</span></h2>
-          <p>Jun88 cập nhật tỷ số bóng đá trực tuyến (livescore) cung cấp thông tin kết quả, diễn biến và số liệu thống kê của các trận đấu bóng đá trên toàn thế giới theo thời gian thực.</p>
+          <p>JUN88 cập nhật tỷ số bóng đá trực tuyến, cung cấp thông tin kết quả, diễn biến và số liệu trận đấu.</p>
         </div>
 
         <div class="sports-grid">
+          <!-- KHỐI ẢNH TRÁI: URL nằm ở SITE_CONFIG.assets.leftPromo -->
           <article class="promo-card" data-reveal>
             <div class="promo-inner">
               <div class="promo-kicker">JUN88 Sports</div>
               <h3>Catch<br>the game</h3>
+              <p>Không gian thể thao nổi bật, bố cục tối ưu để thay hình bằng URL.</p>
               <a class="mini-btn js-link" data-link="sports" href="#">XEM THỂ THAO →</a>
             </div>
           </article>
 
           <section class="scoreboard" data-reveal aria-label="Bảng tỷ số thể thao">
-            <div class="score-head"><strong>Live Scoreboard</strong><span class="live-pill" id="scoreStatus">Demo data</span></div>
-            <div class="score-subhead"><span id="scoreUpdated">Cập nhật: —</span><span>Provider: <b id="scoreProvider">Demo</b></span></div>
+            <div class="score-head">
+              <strong>Live Scoreboard</strong>
+              <span class="live-pill" id="scoreStatus">Demo data</span>
+            </div>
+            <div class="score-subhead">
+              <span id="scoreUpdated">Cập nhật: —</span>
+              <span>Provider: <b id="scoreProvider">Demo</b></span>
+            </div>
             <div id="scoreList"></div>
           </section>
 
-          <article class="promo-card" data-reveal style="background:linear-gradient(160deg,#00a6d8,#062147 75%)">
+          <!-- KHỐI ẢNH PHẢI: URL nằm ở SITE_CONFIG.assets.rightPromo -->
+          <article class="promo-card right" data-reveal>
             <div class="promo-inner">
               <div class="promo-kicker">Matchday</div>
               <h3>Feel<br>the rush</h3>
-              <p>Khối hình ảnh bên phải. Thay trực tiếp bằng URL ảnh trong cấu hình.</p>
+              <p>Thay ảnh trực tiếp bằng URL trong một vị trí duy nhất.</p>
               <a class="mini-btn js-link" data-link="detail" href="#">XEM CHI TIẾT →</a>
             </div>
           </article>
@@ -219,7 +518,7 @@
         <div class="section-head" data-reveal>
           <div class="eyebrow">Section 4 • Game hot</div>
           <h2>Các game <span>hot tại JUN88</span></h2>
-          <p>Thẻ game dạng reusable. Chỉ cần sửa dữ liệu trong <b>SITE_CONFIG.games</b> là có thể nhân bản landing page theo cùng một template.</p>
+          <p>Chỉ cần sửa danh sách game trong SITE_CONFIG.games để nhân bản nội dung.</p>
         </div>
         <div class="game-grid" id="gameGrid"></div>
       </div>
@@ -229,9 +528,9 @@
     <section class="section reasons" id="reasons">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="eyebrow">Section 5 • Why Jun88</div>
+          <div class="eyebrow">Section 5 • Why JUN88</div>
           <h2>Lý do <span>trải nghiệm</span></h2>
-          <p>Cấu trúc nội dung rõ ràng, dễ scan trên mobile và thuận tiện thay đổi thông điệp theo từng thương hiệu.</p>
+          <p>Cấu trúc nội dung rõ ràng, dễ scan trên desktop và mobile.</p>
         </div>
         <div class="reason-grid" id="reasonGrid"></div>
       </div>
@@ -243,7 +542,7 @@
         <div class="section-head" data-reveal>
           <div class="eyebrow">Section 6 • Reviews</div>
           <h2>Người chơi <span>nói gì?</span></h2>
-          <p>Có thể đổi tên, avatar, trích dẫn và đánh giá ngay trong config.</p>
+          <p>Tên, avatar, đánh giá và nội dung review đều thay được trong config.</p>
         </div>
         <div class="review-grid" id="reviewGrid"></div>
       </div>
@@ -252,214 +551,380 @@
     <section class="footer-cta">
       <div class="container" data-reveal>
         <h2>Sẵn sàng vào cuộc?</h2>
-        <p>Một CTA cuối trang với animation nhẹ để tăng điểm chạm chuyển đổi mà không làm rối bố cục.</p>
+        <p>CTA cuối trang gọn, rõ và dễ thay link.</p>
         <a class="btn btn-primary js-link" data-link="register" href="#">CHƠI NGAY <span>↗</span></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-row"><span>© <span id="year"></span> JUN88 Template</span><span>Responsive • Semantic HTML • CSS variables • Config-driven</span></div>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> JUN88 Template</span>
+      <span>Responsive • Semantic HTML • Config-driven</span>
+    </div>
   </footer>
 
   <script>
     /* =========================================================
-       JUN88 LANDING TEMPLATE — CHỈNH Ở ĐÂY ĐỂ NHÂN BẢN
+       1) CHỈNH THÔNG TIN Ở ĐÂY KHI NHÂN BẢN LANDING PAGE
        ========================================================= */
     const SITE_CONFIG = {
       brand: {
-        name: 'JUN88',
-        canonical: 'https://example.com/',
-        logoText: 'JUN88',
+        name: "JUN88",
+        canonical: "https://example.com/",
+        logoText: "JUN88"
       },
+
       theme: {
-        primary: '#0b76f6',
-        primary2: '#15b9ff',
-        navy: '#071a38',
-        bg: '#f4f8ff'
+        primary: "#0b76f6",
+        primary2: "#15b9ff",
+        navy: "#071a38",
+        bg: "#f4f8ff"
       },
+
+      /* Toàn bộ link CTA gom ở MỘT chỗ */
       links: {
-        register: 'https://example.com/dang-ky',
-        login: 'https://example.com/dang-nhap',
-        sports: 'https://example.com/the-thao',
-        detail: 'https://example.com/chi-tiet'
+        register: "https://example.com/dang-ky",
+        login: "https://example.com/dang-nhap",
+        sports: "https://example.com/the-thao",
+        detail: "https://example.com/chi-tiet"
       },
+
+      /* =======================================================
+         ẢNH QUAN TRỌNG NHẤT — GOM Ở MỘT CHỖ
+         Chỉ cần đổi URL ở đây.
+         ======================================================= */
       assets: {
-        logo: '',
-        heroBg: '',
-        leftPromo: '',
-        rightPromo: '',
-        ogImage: ''
+        /* LOGO */
+        logo: "",
+
+        /* SECTION 1 */
+        heroBg: "",
+
+        /* SECTION 3 — 2 KHỐI ẢNH HAI BÊN SCOREBOARD */
+        leftPromo: "",
+        rightPromo: "",
+
+        /* BACKGROUND CÁC SECTION KHÁC — KHÔNG BẮT BUỘC */
+        sportsBg: "",
+        gamesBg: "",
+        reasonsBg: "",
+        reviewsBg: "",
+
+        /* ẢNH OG cho social share */
+        ogImage: ""
       },
+
       seo: {
-        title: 'JUN88 – Nhà cái thể thao & game trực tuyến',
-        description: 'JUN88 – Trải nghiệm thể thao, game bài, nổ hũ, bắn cá và nhiều trò chơi trực tuyến.',
-        keywords: 'JUN88, thể thao, nổ hũ, bắn cá, game bài, xổ số, casino'
+        title: "JUN88 – Nhà cái thể thao & game trực tuyến",
+        description: "JUN88 – Trải nghiệm thể thao, game bài, nổ hũ, bắn cá và nhiều trò chơi trực tuyến.",
+        keywords: "JUN88, thể thao, nổ hũ, bắn cá, game bài, xổ số, casino",
+        ogTitle: "JUN88 – Nhà cái thể thao & game trực tuyến",
+        ogDescription: "Khám phá các game hot, trận đấu nổi bật và ưu đãi tại JUN88."
       },
-     games: [
-  {
-    title: 'Thể Thao',
-    desc: 'Theo dõi trận đấu và kèo thể thao nổi bật.',
-    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/the-thao-jun88-anh.webp',
-    badge: 'SPORTS',
-    link: 'sports'
-  },
 
-  {
-    title: 'Nổ Hũ',
-    desc: 'Kho slot nhiều chủ đề, hiệu ứng bắt mắt.',
-    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/jun88-no-hu-anh.webp',
-    badge: 'SLOT',
-    link: 'detail'
-  },
-
-  {
-    title: 'Bắn Cá',
-    desc: 'Săn boss, combo điểm và trải nghiệm sôi động.',
-    image: 'https://hamonline.nl/wp-content/uploads/2026/07/ban-ca-jun88-hot.webp',
-    badge: 'ARCADE',
-    link: 'detail'
-  },
-
-  {
-    title: 'Game Bài',
-    desc: 'Các bàn game quen thuộc với giao diện hiện đại.',
-    image: 'https://hamonline.nl/wp-content/uploads/2026/07/game-bai-jun88-hot.webp',
-    badge: 'CARD',
-    link: 'detail'
-  },
-
-  {
-    title: 'Xổ Số',
-    desc: 'Chuyên mục kết quả và giải thưởng hấp dẫn.',
-    image: 'https://hamonline.nl/wp-content/uploads/2026/07/xo-so-jun88-hot.webp',
-    badge: 'LOTTERY',
-    link: 'detail'
-  },
-
-  {
-    title: 'Casino',
-    desc: 'Phong cách casino trực tuyến cao cấp.',
-    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/casino-jun88-hinh.webp',
-    badge: 'CASINO',
-    link: 'detail'
-  },
-
-  {
-    title: 'Live Game',
-    desc: 'Không khí bàn live với trải nghiệm trực quan.',
-    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/casino-jun88-hinh.webp',
-    badge: 'LIVE',
-    link: 'detail'
-  },
-
-  {
-    title: 'Mini Game',
-    desc: 'Các game nhanh, gọn và dễ tiếp cận.',
-    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/esprt-jun88-anh.webp',
-    badge: 'HOT',
-    link: 'detail'
-  }
-],
-      reasons: [
-        { icon:'⚡', title:'Giao diện nhanh & trực quan', desc:'Bố cục ưu tiên nội dung quan trọng, CTA nổi bật và scan tốt trên màn hình nhỏ.' },
-        { icon:'🛡️', title:'Cấu trúc rõ ràng', desc:'HTML semantic, heading hợp lý, section độc lập và dữ liệu tách khỏi giao diện.' },
-        { icon:'📱', title:'Responsive', desc:'Tự điều chỉnh từ desktop xuống mobile mà vẫn giữ hierarchy và khoảng thở.' },
-        { icon:'🎯', title:'CTA dễ thay đổi', desc:'Toàn bộ link đăng ký, đăng nhập, chơi ngay, thể thao và chi tiết gom trong một config.' },
-        { icon:'🧩', title:'Dễ nhân bản', desc:'Mỗi landing page chỉ cần đổi config, màu sắc, logo, hình ảnh và nội dung.' },
-        { icon:'✨', title:'Animation vừa đủ', desc:'Hover, reveal và shine giúp trang sinh động mà không làm ảnh hưởng khả năng đọc.' }
+      games: [
+        {
+          title: "Thể Thao",
+          desc: "Theo dõi trận đấu và kèo thể thao nổi bật.",
+          image: "https://productfeedtool.nl/wp-content/uploads/2026/07/the-thao-jun88-anh.webp",
+          badge: "SPORTS",
+          link: "sports"
+        },
+        {
+          title: "Nổ Hũ",
+          desc: "Kho slot nhiều chủ đề, hiệu ứng bắt mắt.",
+          image: "https://productfeedtool.nl/wp-content/uploads/2026/07/jun88-no-hu-anh.webp",
+          badge: "SLOT",
+          link: "detail"
+        },
+        {
+          title: "Bắn Cá",
+          desc: "Săn boss, combo điểm và trải nghiệm sôi động.",
+          image: "https://hamonline.nl/wp-content/uploads/2026/07/ban-ca-jun88-hot.webp",
+          badge: "ARCADE",
+          link: "detail"
+        },
+        {
+          title: "Game Bài",
+          desc: "Các bàn game quen thuộc với giao diện hiện đại.",
+          image: "https://hamonline.nl/wp-content/uploads/2026/07/game-bai-jun88-hot.webp",
+          badge: "CARD",
+          link: "detail"
+        },
+        {
+          title: "Xổ Số",
+          desc: "Chuyên mục kết quả và giải thưởng hấp dẫn.",
+          image: "https://hamonline.nl/wp-content/uploads/2026/07/xo-so-jun88-hot.webp",
+          badge: "LOTTERY",
+          link: "detail"
+        },
+        {
+          title: "Casino",
+          desc: "Phong cách casino trực tuyến cao cấp.",
+          image: "https://productfeedtool.nl/wp-content/uploads/2026/07/casino-jun88-hinh.webp",
+          badge: "CASINO",
+          link: "detail"
+        },
+        {
+          title: "Live Game",
+          desc: "Không khí bàn live với trải nghiệm trực quan.",
+          image: "https://productfeedtool.nl/wp-content/uploads/2026/07/casino-jun88-hinh.webp",
+          badge: "LIVE",
+          link: "detail"
+        },
+        {
+          title: "Mini Game",
+          desc: "Các game nhanh, gọn và dễ tiếp cận.",
+          image: "https://productfeedtool.nl/wp-content/uploads/2026/07/esprt-jun88-anh.webp",
+          badge: "HOT",
+          link: "detail"
+        }
       ],
+
+      reasons: [
+        { icon:"⚡", title:"Giao diện nhanh & trực quan", desc:"Bố cục ưu tiên nội dung quan trọng, CTA nổi bật và dễ scan trên màn hình nhỏ." },
+        { icon:"🛡️", title:"Cấu trúc rõ ràng", desc:"HTML semantic, heading hợp lý, section độc lập và dữ liệu tách khỏi giao diện." },
+        { icon:"📱", title:"Responsive", desc:"Tự điều chỉnh từ desktop xuống mobile mà vẫn giữ hierarchy và khoảng thở." },
+        { icon:"🎯", title:"CTA dễ thay đổi", desc:"Toàn bộ link đăng ký, đăng nhập, chơi ngay, thể thao và chi tiết gom trong config." },
+        { icon:"🧩", title:"Dễ nhân bản", desc:"Mỗi landing page chỉ cần đổi config, màu sắc, logo, hình ảnh và nội dung." },
+        { icon:"✨", title:"Animation vừa đủ", desc:"Hover, reveal và shine giúp trang sinh động mà không làm ảnh hưởng khả năng đọc." }
+      ],
+
       reviews: [
-        { name:'Minh K.', role:'Người chơi', avatar:'MK', quote:'Bố cục dễ xem, phần thể thao nằm đúng trung tâm nên tìm trận nhanh.', stars:5 },
-        { name:'Hoàng T.', role:'Thành viên', avatar:'HT', quote:'Mình thích các thẻ game vì nhìn rõ từng nhóm và nút xem chi tiết.', stars:5 },
-        { name:'An P.', role:'Người dùng', avatar:'AP', quote:'Trên điện thoại vẫn khá gọn, CTA nổi bật mà không quá rối mắt.', stars:5 }
+        { name:"Minh K.", role:"Người chơi", avatar:"MK", quote:"Bố cục dễ xem, phần thể thao nằm đúng trung tâm nên tìm trận nhanh.", stars:5 },
+        { name:"Hoàng T.", role:"Thành viên", avatar:"HT", quote:"Mình thích các thẻ game vì nhìn rõ từng nhóm và nút xem chi tiết.", stars:5 },
+        { name:"An P.", role:"Người dùng", avatar:"AP", quote:"Trên điện thoại vẫn khá gọn, CTA nổi bật mà không quá rối mắt.", stars:5 }
       ]
     };
-
-    // Áp theme
-    Object.entries(SITE_CONFIG.theme).forEach(([k,v])=>document.documentElement.style.setProperty('--'+k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()),v));
-
-    // Link tập trung một chỗ
-    document.querySelectorAll('.js-link').forEach(el=>{
-      const key = el.dataset.link;
-      if(SITE_CONFIG.links[key]) el.href = SITE_CONFIG.links[key];
-    });
-    document.querySelectorAll('.js-logo').forEach(el=>{
-      el.href = SITE_CONFIG.brand.canonical;
-      const text = el.querySelector('span:last-child'); if(text) text.textContent = SITE_CONFIG.brand.logoText;
-    });
-
-    // Games
-    const gameGrid = document.getElementById('gameGrid');
-    SITE_CONFIG.games.forEach((g,i)=>{
-      const card = document.createElement('article'); card.className='game-card'; card.dataset.reveal='';
-      card.innerHTML = `
-        <div class="game-visual" style="background-image:url('${g.image}')">
-        <span class="g-badge">${g.badge}</span>
-        </div>
-        <div class="game-body"><h3>${g.title}</h3><p>${g.desc}</p><a class="link js-link" data-link="${g.link}" href="#">Xem chi tiết →</a></div>`;
-      gameGrid.appendChild(card);
-    });
-
-    // Reasons
-    document.getElementById('reasonGrid').innerHTML = SITE_CONFIG.reasons.map(r=>`<article class="reason" data-reveal><div class="ico">${r.icon}</div><h3>${r.title}</h3><p>${r.desc}</p></article>`).join('');
-    // Review
-    document.getElementById('reviewGrid').innerHTML = SITE_CONFIG.reviews.map(r=>`<article class="review" data-reveal><div class="stars">${'★'.repeat(r.stars)}</div><p>“${r.quote}”</p><div class="person"><div class="avatar">${r.avatar}</div><div><strong>${r.name}</strong><span>${r.role}</span></div></div></article>`).join('');
-    // Assign links after dynamic render
-    document.querySelectorAll('.js-link').forEach(el=>{ const key=el.dataset.link; if(SITE_CONFIG.links[key]) el.href=SITE_CONFIG.links[key]; });
 
     /* =========================================================
-       SPORTS SCOREBOARD — TÁCH RIÊNG ĐỂ THAY PROVIDER/API
+       2) HELPER
+       ========================================================= */
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+    function setCssVar(name, value){
+      if(value) document.documentElement.style.setProperty(name, `url("${value}")`);
+    }
+
+    function setMeta(selector, content){
+      const el = $(selector);
+      if(el && content) el.setAttribute("content", content);
+    }
+
+    /* =========================================================
+       3) THEME
+       ========================================================= */
+    Object.entries(SITE_CONFIG.theme).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(
+        "--" + key.replace(/[A-Z]/g, char => "-" + char.toLowerCase()),
+        value
+      );
+    });
+
+    /* =========================================================
+       4) ẢNH — TẤT CẢ URL NẰM Ở SITE_CONFIG.assets
+       ========================================================= */
+    setCssVar("--hero-bg", SITE_CONFIG.assets.heroBg);
+    setCssVar("https://hamonline.nl/wp-content/uploads/2026/09/cac-doi-tham-gia-c1.webp", SITE_CONFIG.assets.leftPromo);
+    setCssVar("https://hamonline.nl/wp-content/uploads/2026/09/giai-dau-c1.webp", SITE_CONFIG.assets.rightPromo);
+    setCssVar("--sports-bg", SITE_CONFIG.assets.sportsBg);
+    setCssVar("--games-bg", SITE_CONFIG.assets.gamesBg);
+    setCssVar("--reasons-bg", SITE_CONFIG.assets.reasonsBg);
+    setCssVar("--reviews-bg", SITE_CONFIG.assets.reviewsBg);
+
+    /* Logo */
+    const logoLink = $(".js-logo");
+    if (logoLink) {
+      logoLink.href = SITE_CONFIG.brand.canonical || "#home";
+
+      const logoUrl = SITE_CONFIG.assets.logo;
+      if (logoUrl) {
+        logoLink.innerHTML = `<img class="brand-logo" src="${logoUrl}" alt="${SITE_CONFIG.brand.logoText || SITE_CONFIG.brand.name}">`;
+      } else {
+        logoLink.innerHTML = `
+          <span class="brand-fallback" aria-hidden="true"></span>
+          <span>${SITE_CONFIG.brand.logoText || SITE_CONFIG.brand.name}</span>
+        `;
+      }
+    }
+
+    /* =========================================================
+       5) SEO
+       ========================================================= */
+    document.title = SITE_CONFIG.seo.title;
+    setMeta('meta[name="description"]', SITE_CONFIG.seo.description);
+    setMeta('meta[name="keywords"]', SITE_CONFIG.seo.keywords);
+    setMeta('meta[property="og:title"]', SITE_CONFIG.seo.ogTitle || SITE_CONFIG.seo.title);
+    setMeta('meta[property="og:description"]', SITE_CONFIG.seo.ogDescription || SITE_CONFIG.seo.description);
+    setMeta('meta[property="og:image"]', SITE_CONFIG.assets.ogImage);
+    setMeta('meta[name="twitter:title"]', SITE_CONFIG.seo.ogTitle || SITE_CONFIG.seo.title);
+    setMeta('meta[name="twitter:description"]', SITE_CONFIG.seo.ogDescription || SITE_CONFIG.seo.description);
+    setMeta('meta[name="twitter:image"]', SITE_CONFIG.assets.ogImage);
+
+    const canonical = $('link[rel="canonical"]');
+    if (canonical) canonical.href = SITE_CONFIG.brand.canonical;
+
+    /* =========================================================
+       6) LINKS — TẤT CẢ CTA DÙNG data-link
+       ========================================================= */
+    function applyLinks(root = document){
+      $$(".js-link", root).forEach(el => {
+        const key = el.dataset.link;
+        if (key && SITE_CONFIG.links[key]) el.href = SITE_CONFIG.links[key];
+      });
+    }
+    applyLinks();
+
+    /* =========================================================
+       7) GAMES
+       ========================================================= */
+    const gameGrid = $("#gameGrid");
+    gameGrid.innerHTML = SITE_CONFIG.games.map(game => `
+      <article class="game-card" data-reveal>
+        <div class="game-visual" style="background-image:url('${game.image || ""}')">
+          <span class="g-badge">${game.badge || "HOT"}</span>
+        </div>
+        <div class="game-body">
+          <h3>${game.title}</h3>
+          <p>${game.desc}</p>
+          <a class="link js-link" data-link="${game.link || "detail"}" href="#">Xem chi tiết →</a>
+        </div>
+      </article>
+    `).join("");
+    applyLinks(gameGrid);
+
+    /* =========================================================
+       8) REASONS
+       ========================================================= */
+    $("#reasonGrid").innerHTML = SITE_CONFIG.reasons.map(reason => `
+      <article class="reason" data-reveal>
+        <div class="ico" aria-hidden="true">${reason.icon}</div>
+        <h3>${reason.title}</h3>
+        <p>${reason.desc}</p>
+      </article>
+    `).join("");
+
+    /* =========================================================
+       9) REVIEWS
+       ========================================================= */
+    $("#reviewGrid").innerHTML = SITE_CONFIG.reviews.map(review => `
+      <article class="review" data-reveal>
+        <div class="stars" aria-label="${review.stars || 5} trên 5 sao">${"★".repeat(review.stars || 5)}</div>
+        <p>“${review.quote}”</p>
+        <div class="person">
+          <div class="avatar" aria-hidden="true">${review.avatar}</div>
+          <div>
+            <strong>${review.name}</strong>
+            <span>${review.role}</span>
+          </div>
+        </div>
+      </article>
+    `).join("");
+
+    /* =========================================================
+       10) SCOREBOARD — TÁCH RIÊNG
        ========================================================= */
     const SPORTS_CONFIG = {
-      provider: 'demo',
+      provider: "demo",
       refreshMs: 60000,
-      // Có thể đổi thành endpoint JSON của provider bạn dùng.
-      // Schema mong đợi: [{league, icon, home, away, homeScore, awayScore, status}]
-      endpoint: '',
+
+      /* Endpoint JSON:
+         [
+           { league, icon, home, away, homeScore, awayScore, status }
+         ]
+      */
+      endpoint: "",
+
       demo: [
-        {league:'UEFA', icon:'⚽', home:'Real Madrid', away:'Man City', homeScore:2, awayScore:1, status:'FT'},
-        {league:'UCL', icon:'⚽', home:'Barcelona', away:'Bayern', homeScore:1, awayScore:1, status:'LIVE'},
-        {league:'NBA', icon:'🏀', home:'Lakers', away:'Celtics', homeScore:108, awayScore:111, status:'Q4'},
-        {league:'ATP', icon:'🎾', home:'Player A', away:'Player B', homeScore:2, awayScore:1, status:'SET 3'}
+        { league:"UEFA", icon:"⚽", home:"Real Madrid", away:"Man City", homeScore:2, awayScore:1, status:"FT" },
+        { league:"UCL", icon:"⚽", home:"Barcelona", away:"Bayern", homeScore:1, awayScore:1, status:"LIVE" },
+        { league:"NBA", icon:"🏀", home:"Lakers", away:"Celtics", homeScore:108, awayScore:111, status:"Q4" },
+        { league:"ATP", icon:"🎾", home:"Player A", away:"Player B", homeScore:2, awayScore:1, status:"SET 3" }
       ]
     };
 
-    function renderScores(items, live=false){
-      const host = document.getElementById('scoreList');
-      host.innerHTML = items.slice(0,5).map(m=>`<div class="match"><div class="league">${m.icon||'🏆'}</div><div class="match-main"><strong>${m.home} <span style="display:inline">vs</span> ${m.away}</strong><span>${m.league||'Sports'} • ${m.status||'Upcoming'}</span></div><div class="score">${m.homeScore ?? '-'} - ${m.awayScore ?? '-'}<small>${m.status||''}</small></div></div>`).join('');
-      document.getElementById('scoreProvider').textContent = live ? SPORTS_CONFIG.provider.toUpperCase() : 'DEMO';
-      document.getElementById('scoreStatus').textContent = live ? 'Live feed' : 'Demo data';
-      document.getElementById('scoreUpdated').textContent = 'Cập nhật: ' + new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+    function renderScores(items, live = false){
+      const host = $("#scoreList");
+
+      host.innerHTML = items.slice(0, 5).map(match => `
+        <div class="match">
+          <div class="league">${match.icon || "🏆"}</div>
+
+          <div class="match-main">
+            <strong>${match.home} <span style="display:inline">vs</span> ${match.away}</strong>
+            <span>${match.league || "Sports"} • ${match.status || "Upcoming"}</span>
+          </div>
+
+          <div class="score">
+            ${match.homeScore ?? "-"} - ${match.awayScore ?? "-"}
+            <small>${match.status || ""}</small>
+          </div>
+        </div>
+      `).join("");
+
+      $("#scoreProvider").textContent = live ? SPORTS_CONFIG.provider.toUpperCase() : "DEMO";
+      $("#scoreStatus").textContent = live ? "Live feed" : "Demo data";
+      $("#scoreUpdated").textContent =
+        "Cập nhật: " +
+        new Date().toLocaleTimeString("vi-VN", {
+          hour:"2-digit",
+          minute:"2-digit"
+        });
     }
 
     async function loadScores(){
-      if(!SPORTS_CONFIG.endpoint){ renderScores(SPORTS_CONFIG.demo,false); return; }
+      if(!SPORTS_CONFIG.endpoint){
+        renderScores(SPORTS_CONFIG.demo, false);
+        return;
+      }
+
       try{
-        const res = await fetch(SPORTS_CONFIG.endpoint,{headers:{'Accept':'application/json'}});
-        if(!res.ok) throw new Error('HTTP '+res.status);
-        const data = await res.json();
-        const items = Array.isArray(data) ? data : (data.matches||data.events||[]);
-        if(!items.length) throw new Error('No matches');
-        renderScores(items,true);
-      }catch(err){
-        console.warn('Sports feed fallback:',err);
-        renderScores(SPORTS_CONFIG.demo,false);
+        const response = await fetch(SPORTS_CONFIG.endpoint, {
+          headers:{Accept:"application/json"}
+        });
+
+        if(!response.ok) throw new Error("HTTP " + response.status);
+
+        const data = await response.json();
+        const items = Array.isArray(data)
+          ? data
+          : (data.matches || data.events || []);
+
+        if(!items.length) throw new Error("No matches");
+
+        renderScores(items, true);
+      }catch(error){
+        console.warn("Sports feed fallback:", error);
+        renderScores(SPORTS_CONFIG.demo, false);
       }
     }
-    loadScores(); setInterval(loadScores,SPORTS_CONFIG.refreshMs);
 
-    // Reveal animation
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
-    },{threshold:.12});
-    document.querySelectorAll('[data-reveal]').forEach((el,i)=>{el.style.transitionDelay=((i%4)*70)+'ms'; observer.observe(el)});
-    document.getElementById('year').textContent = new Date().getFullYear();
+    loadScores();
+    if(SPORTS_CONFIG.endpoint && SPORTS_CONFIG.refreshMs > 0){
+      setInterval(loadScores, SPORTS_CONFIG.refreshMs);
+    }
 
-    // Hỗ trợ prefilling SEO từ config khi clone template
-    document.title = SITE_CONFIG.seo.title;
-    const desc=document.querySelector('meta[name="description"]'); if(desc) desc.content=SITE_CONFIG.seo.description;
-    const canon=document.querySelector('link[rel="canonical"]'); if(canon) canon.href=SITE_CONFIG.brand.canonical;
+    /* =========================================================
+       11) REVEAL ANIMATION
+       ========================================================= */
+    const revealItems = $$("[data-reveal]");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    revealItems.forEach((el, index) => {
+      el.style.transitionDelay = ((index % 4) * 70) + "ms";
+      observer.observe(el);
+    });
+
+    $("#year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
