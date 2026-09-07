@@ -103,7 +103,7 @@
        SECTION 1 — HERO
        ========================= */
     .hero{
-      min-height:400px;
+      min-height:680px;
       padding:46px 0 80px;
       position:relative;
       isolation:isolate;
@@ -471,6 +471,7 @@
     <section class="section sports" id="sports">
       <div class="container">
         <div class="section-head" data-reveal>
+          <div class="eyebrow">Section 3 • Live Sports</div>
           <h2>Tỷ số các trận đấu <span>đang hot</span></h2>
           <p>JUN88 cập nhật tỷ số bóng đá trực tuyến, cung cấp thông tin kết quả, diễn biến và số liệu trận đấu.</p>
         </div>
@@ -481,6 +482,7 @@
             <div class="promo-inner">
               <div class="promo-kicker">JUN88 Sports</div>
               <h3>Catch<br>the game</h3>
+              <p>Không gian thể thao nổi bật, bố cục tối ưu để thay hình bằng URL.</p>
               <a class="mini-btn js-link" data-link="sports" href="#">XEM THỂ THAO →</a>
             </div>
           </article>
@@ -502,6 +504,7 @@
             <div class="promo-inner">
               <div class="promo-kicker">Matchday</div>
               <h3>Feel<br>the rush</h3>
+              <p>Thay ảnh trực tiếp bằng URL trong một vị trí duy nhất.</p>
               <a class="mini-btn js-link" data-link="detail" href="#">XEM CHI TIẾT →</a>
             </div>
           </article>
@@ -513,7 +516,9 @@
     <section class="section games" id="games">
       <div class="container">
         <div class="section-head" data-reveal>
+          <div class="eyebrow">Section 4 • Game hot</div>
           <h2>Các game <span>hot tại JUN88</span></h2>
+          <p>Chỉ cần sửa danh sách game trong SITE_CONFIG.games để nhân bản nội dung.</p>
         </div>
         <div class="game-grid" id="gameGrid"></div>
       </div>
@@ -523,8 +528,9 @@
     <section class="section reasons" id="reasons">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2>Lý do <span>lựa chọn Jun88 thể thao </span></h2>
-          <p>Jun88 mang đến trải nghiệm cá cược đẳng cấp với hạ tầng hiện đại, an toàn và tỷ lệ kèo hấp dẫn hàng đầu thị trường.</p>
+          <div class="eyebrow">Section 5 • Why JUN88</div>
+          <h2>Lý do <span>trải nghiệm</span></h2>
+          <p>Cấu trúc nội dung rõ ràng, dễ scan trên desktop và mobile.</p>
         </div>
         <div class="reason-grid" id="reasonGrid"></div>
       </div>
@@ -534,7 +540,9 @@
     <section class="section reviews" id="reviews">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2>Người chơi <span>nói gì về Jun88?</span></h2>
+          <div class="eyebrow">Section 6 • Reviews</div>
+          <h2>Người chơi <span>nói gì?</span></h2>
+          <p>Tên, avatar, đánh giá và nội dung review đều thay được trong config.</p>
         </div>
         <div class="review-grid" id="reviewGrid"></div>
       </div>
@@ -542,8 +550,8 @@
 
     <section class="footer-cta">
       <div class="container" data-reveal>
-        <h2>Nhập cuộc ngay cùng Jun88</h2>
-        <p>Đăng ký ngay hôm nay để nhận ưu đãi tân thủ cực khủng và chinh phục mọi kèo đỉnh cao.</p>
+        <h2>Sẵn sàng vào cuộc?</h2>
+        <p>CTA cuối trang gọn, rõ và dễ thay link.</p>
         <a class="btn btn-primary js-link" data-link="register" href="#">CHƠI NGAY <span>↗</span></a>
       </div>
     </section>
@@ -551,8 +559,8 @@
 
   <footer>
     <div class="container footer-row">
-      <span>© <span id="year"></span> JUN88 Thể thao</span>
-      <span>#Jun88 #Jun88ThểThao #Jun88Sports #Jun88TheThao #TrangChuJun88 #NhaCaiJun88 #Jun88ChinhThuc #CaCuocTheThao #SoiKeoBongDa #TyleKeo #NhacaiUyTin #BetBongDa #KèoNhàCái #KeoBongDa #LiveScore #TyleCuoc #CuocBongDa #KeoChauA #KeoTaiXiu</span>
+      <span>© <span id="year"></span> JUN88 Template</span>
+      <span>Responsive • Semantic HTML • Config-driven</span>
     </div>
   </footer>
 
@@ -563,7 +571,7 @@
     const SITE_CONFIG = {
       brand: {
         name: "JUN88",
-        canonical: "https://jun88-the-thao.pages.dev/",
+        canonical: "https://example.com/",
         logoText: "JUN88"
       },
 
@@ -588,14 +596,14 @@
          ======================================================= */
       assets: {
         /* LOGO */
-        logo: "https://hamonline.nl/wp-content/uploads/2026/07/jun88-logo-1.webp",
+        logo: "",
 
         /* SECTION 1 */
-        heroBg: "https://i.pinimg.com/736x/e9/26/5f/e9265fbed7529fb4c80277965835abc5.jpg",
+        heroBg: "",
 
         /* SECTION 3 — 2 KHỐI ẢNH HAI BÊN SCOREBOARD */
-        leftPromo: "https://hamonline.nl/wp-content/uploads/2026/09/cac-doi-tham-gia-c1.webp",
-        rightPromo: "https://hamonline.nl/wp-content/uploads/2026/09/giai-dau-c1-moi-nhat.webp",
+        leftPromo: "",
+        rightPromo: "",
 
         /* BACKGROUND CÁC SECTION KHÁC — KHÔNG BẮT BUỘC */
         sportsBg: "",
@@ -675,18 +683,18 @@
       ],
 
       reasons: [
-        { icon:"⚡", title:"Giao diện siêu tốc & trực quan", desc:"Bố cục tối ưu giúp soi kèo và đặt cược chỉ trong vài thao tác. Tốc độ tải trang mượt mà, không lo giật lag ngay cả trong khung giờ cao điểm." },
-        { icon:"🛡️", title:"Bảo mật tuyệt đối", desc:"Cam kết bảo mật dữ liệu tuyệt đối với công nghệ mã hóa hiện đại. Mọi biến động kèo và lịch sử giao dịch đều được công khai rõ ràng." },
-        { icon:"📱", title:"Tương Thích Mọi Thiết Bị", desc:"Tự động tối ưu mượt mà trên cả điện thoại và máy tính. Đặt cược linh hoạt mọi lúc, mọi nơi mà không gò bó không gian." },
-        { icon:"🎯", title:"Tỷ Lệ Kèo Hấp Dẫn & Đa Dạng", desc:"Cập nhật tỷ lệ kèo real-time chính xác từng giây. Phủ sóng toàn bộ giải đấu lớn nhỏ với đa dạng loại kèo (Châu Á, Châu Âu, Tài Xỉu, Cược Xâu)." },
-        { icon:"🧩", title:"Ưu Đãi Khủng & Hoàn Trả Cao", desc:"Chương trình thưởng nạp hấp dẫn cho tân thủ cùng chính sách hoàn trả cược thể thao không giới hạn cực cao mỗi ngày." },
-        { icon:"✨", title:"Nạp Rút Siêu Tốc & Hỗ Trợ 24/7", desc:"Giao diện thanh toán nạp/rút tự động xử lý chỉ trong vài phút, kèm đội ngũ CSKH chuyên nghiệp túc trực hỗ trợ bạn mọi lúc." }
+        { icon:"⚡", title:"Giao diện nhanh & trực quan", desc:"Bố cục ưu tiên nội dung quan trọng, CTA nổi bật và dễ scan trên màn hình nhỏ." },
+        { icon:"🛡️", title:"Cấu trúc rõ ràng", desc:"HTML semantic, heading hợp lý, section độc lập và dữ liệu tách khỏi giao diện." },
+        { icon:"📱", title:"Responsive", desc:"Tự điều chỉnh từ desktop xuống mobile mà vẫn giữ hierarchy và khoảng thở." },
+        { icon:"🎯", title:"CTA dễ thay đổi", desc:"Toàn bộ link đăng ký, đăng nhập, chơi ngay, thể thao và chi tiết gom trong config." },
+        { icon:"🧩", title:"Dễ nhân bản", desc:"Mỗi landing page chỉ cần đổi config, màu sắc, logo, hình ảnh và nội dung." },
+        { icon:"✨", title:"Animation vừa đủ", desc:"Hover, reveal và shine giúp trang sinh động mà không làm ảnh hưởng khả năng đọc." }
       ],
 
       reviews: [
-        { name:"Minh K.", role:"Người chơi", avatar:"MK", quote:"Rút tiền cực nhanh, tầm 3-5 phút là về tài khoản. Kèo thể thao ở đây chuẩn, tỷ lệ ăn lại cao hơn mấy bên khác.", stars:5 },
-        { name:"Hoàng T.", role:"Thành viên", avatar:"HT", quote:"Kết nhất khoản cập nhật tỷ số real-time mượt mà, bấm đặt cược nhảy tiền ngay chứ không bị delay lag máy.", stars:5 },
-        { name:"An P.", role:"Người dùng", avatar:"AP", quote:"CSKH hỗ trợ nhiệt tình. Lần đầu nạp tiền chưa biết thao tác được các bạn hướng dẫn chi tiết chỉ trong 1 phút.", stars:5 }
+        { name:"Minh K.", role:"Người chơi", avatar:"MK", quote:"Bố cục dễ xem, phần thể thao nằm đúng trung tâm nên tìm trận nhanh.", stars:5 },
+        { name:"Hoàng T.", role:"Thành viên", avatar:"HT", quote:"Mình thích các thẻ game vì nhìn rõ từng nhóm và nút xem chi tiết.", stars:5 },
+        { name:"An P.", role:"Người dùng", avatar:"AP", quote:"Trên điện thoại vẫn khá gọn, CTA nổi bật mà không quá rối mắt.", stars:5 }
       ]
     };
 
