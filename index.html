@@ -103,7 +103,7 @@
        SECTION 1 — HERO
        ========================= */
     .hero{
-      min-height:680px;
+      min-height:400px;
       padding:46px 0 80px;
       position:relative;
       isolation:isolate;
@@ -247,36 +247,48 @@
     }
     .mini-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
 
-    .scoreboard{background:#fff}
-    .score-head{
-      padding:18px 20px;border-bottom:1px solid var(--line);
-      display:flex;justify-content:space-between;align-items:center;gap:14px
+    .scoreboard{
+      background:#fff;
+      min-width:0;
+      display:flex;
+      flex-direction:column;
     }
-    .score-head strong{font-size:18px}
+    .scoreboard-title{
+      min-height:72px;
+      padding:16px 20px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex:0 0 auto;
+    }
+    .scoreboard-title strong{font-size:18px}
     .live-pill{
-      font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
-      background:#eff8ff;color:var(--primary);padding:7px 10px;border-radius:999px
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      background:#eff8ff;
+      color:var(--primary);
+      padding:7px 10px;
+      border-radius:999px;
+      white-space:nowrap;
     }
-    .score-subhead{
-      padding:10px 20px;background:#f6f9fd;border-bottom:1px solid var(--line);
-      font-size:11px;color:var(--muted);display:flex;justify-content:space-between
+    .scoreboard-iframe{
+      width:100%;
+      min-height:680px;
+      background:#fff;
+      overflow:hidden;
     }
-    .match{
-      padding:16px 20px;border-bottom:1px solid var(--line);
-      display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center
-    }
-    .match:last-child{border-bottom:0}
-    .league{
-      width:56px;height:56px;border-radius:16px;
-      background:linear-gradient(145deg,#dff4ff,#edf2ff);
-      display:grid;place-items:center;font-size:20px
-    }
-    .match-main strong{display:block;font-size:13px}
-    .match-main span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
-    .score{font-weight:900;font-size:24px;letter-spacing:-.04em;white-space:nowrap}
-    .score small{
-      font-size:10px;color:#2a9d69;display:block;text-align:right;
-      letter-spacing:.08em;text-transform:uppercase
+    .scoreboard-iframe iframe{
+      display:block;
+      width:100%;
+      height:1200px;
+      min-height:680px;
+      border:0;
+      margin:0;
+      padding:0;
     }
 
     /* =========================
@@ -408,11 +420,10 @@
       .brand-logo{width:130px;height:46px}
       .section{padding:64px 0}
       .game-grid,.reason-grid,.review-grid{grid-template-columns:1fr}
-      .score-head{align-items:flex-start}
+      .scoreboard-title{min-height:64px;padding:14px 16px}
+      .scoreboard-iframe{min-height:900px}
+      .scoreboard-iframe iframe{height:1200px;min-height:900px}
       .footer-row{flex-direction:column;text-align:center}
-      .match{grid-template-columns:44px 1fr auto}
-      .league{width:44px;height:44px}
-      .score{font-size:20px}
     }
 
     @media (prefers-reduced-motion:reduce){
@@ -471,7 +482,6 @@
     <section class="section sports" id="sports">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="eyebrow">Section 3 • Live Sports</div>
           <h2>Tỷ số các trận đấu <span>đang hot</span></h2>
           <p>JUN88 cập nhật tỷ số bóng đá trực tuyến, cung cấp thông tin kết quả, diễn biến và số liệu trận đấu.</p>
         </div>
@@ -482,21 +492,25 @@
             <div class="promo-inner">
               <div class="promo-kicker">JUN88 Sports</div>
               <h3>Catch<br>the game</h3>
-              <p>Không gian thể thao nổi bật, bố cục tối ưu để thay hình bằng URL.</p>
               <a class="mini-btn js-link" data-link="sports" href="#">XEM THỂ THAO →</a>
             </div>
           </article>
 
+          <!-- KHU VỰC IFRAME TỶ SỐ -->
           <section class="scoreboard" data-reveal aria-label="Bảng tỷ số thể thao">
-            <div class="score-head">
+            <div class="scoreboard-title">
               <strong>Live Scoreboard</strong>
-              <span class="live-pill" id="scoreStatus">Demo data</span>
+              <span class="live-pill">LIVE</span>
             </div>
-            <div class="score-subhead">
-              <span id="scoreUpdated">Cập nhật: —</span>
-              <span>Provider: <b id="scoreProvider">Demo</b></span>
+            <div class="scoreboard-iframe">
+              <iframe
+                src="https://keonhacai.cat/iframe/"
+                title="Bảng tỷ số bóng đá trực tuyến"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin">
+              </iframe>
             </div>
-            <div id="scoreList"></div>
           </section>
 
           <!-- KHỐI ẢNH PHẢI: URL nằm ở SITE_CONFIG.assets.rightPromo -->
@@ -504,7 +518,6 @@
             <div class="promo-inner">
               <div class="promo-kicker">Matchday</div>
               <h3>Feel<br>the rush</h3>
-              <p>Thay ảnh trực tiếp bằng URL trong một vị trí duy nhất.</p>
               <a class="mini-btn js-link" data-link="detail" href="#">XEM CHI TIẾT →</a>
             </div>
           </article>
@@ -516,9 +529,7 @@
     <section class="section games" id="games">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="eyebrow">Section 4 • Game hot</div>
           <h2>Các game <span>hot tại JUN88</span></h2>
-          <p>Chỉ cần sửa danh sách game trong SITE_CONFIG.games để nhân bản nội dung.</p>
         </div>
         <div class="game-grid" id="gameGrid"></div>
       </div>
@@ -528,9 +539,8 @@
     <section class="section reasons" id="reasons">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="eyebrow">Section 5 • Why JUN88</div>
-          <h2>Lý do <span>trải nghiệm</span></h2>
-          <p>Cấu trúc nội dung rõ ràng, dễ scan trên desktop và mobile.</p>
+          <h2>Lý do <span>lựa chọn Jun88 thể thao </span></h2>
+          <p>Jun88 mang đến trải nghiệm cá cược đẳng cấp với hạ tầng hiện đại, an toàn và tỷ lệ kèo hấp dẫn hàng đầu thị trường.</p>
         </div>
         <div class="reason-grid" id="reasonGrid"></div>
       </div>
@@ -540,9 +550,7 @@
     <section class="section reviews" id="reviews">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div class="eyebrow">Section 6 • Reviews</div>
-          <h2>Người chơi <span>nói gì?</span></h2>
-          <p>Tên, avatar, đánh giá và nội dung review đều thay được trong config.</p>
+          <h2>Người chơi <span>nói gì về Jun88?</span></h2>
         </div>
         <div class="review-grid" id="reviewGrid"></div>
       </div>
@@ -550,8 +558,8 @@
 
     <section class="footer-cta">
       <div class="container" data-reveal>
-        <h2>Sẵn sàng vào cuộc?</h2>
-        <p>CTA cuối trang gọn, rõ và dễ thay link.</p>
+        <h2>Nhập cuộc ngay cùng Jun88</h2>
+        <p>Đăng ký ngay hôm nay để nhận ưu đãi tân thủ cực khủng và chinh phục mọi kèo đỉnh cao.</p>
         <a class="btn btn-primary js-link" data-link="register" href="#">CHƠI NGAY <span>↗</span></a>
       </div>
     </section>
@@ -559,8 +567,8 @@
 
   <footer>
     <div class="container footer-row">
-      <span>© <span id="year"></span> JUN88 Template</span>
-      <span>Responsive • Semantic HTML • Config-driven</span>
+      <span>© <span id="year"></span> JUN88 Thể thao</span>
+      <span>#Jun88 #Jun88ThểThao #Jun88Sports #Jun88TheThao #TrangChuJun88 #NhaCaiJun88 #Jun88ChinhThuc #CaCuocTheThao #SoiKeoBongDa #TyleKeo #NhacaiUyTin #BetBongDa #KèoNhàCái #KeoBongDa #LiveScore #TyleCuoc #CuocBongDa #KeoChauA #KeoTaiXiu</span>
     </div>
   </footer>
 
@@ -571,7 +579,7 @@
     const SITE_CONFIG = {
       brand: {
         name: "JUN88",
-        canonical: "https://example.com/",
+        canonical: "https://jun88-the-thao.pages.dev/",
         logoText: "JUN88"
       },
 
@@ -596,14 +604,17 @@
          ======================================================= */
       assets: {
         /* LOGO */
-        logo: "",
+        logo: "https://hamonline.nl/wp-content/uploads/2026/07/jun88-logo-1.webp",
 
         /* SECTION 1 */
-        heroBg: "",
+        heroBg: "https://i.pinimg.com/736x/e9/26/5f/e9265fbed7529fb4c80277965835abc5.jpg",
 
         /* SECTION 3 — 2 KHỐI ẢNH HAI BÊN SCOREBOARD */
-        leftPromo: "",
-        rightPromo: "",
+        leftPromo: "https://hamonline.nl/wp-content/uploads/2026/09/cac-doi-tham-gia-c1.webp",
+        rightPromo: "https://hamonline.nl/wp-content/uploads/2026/09/giai-dau-c1-moi-nhat.webp",
+
+        /* IFRAME TỶ SỐ */
+        scoreboardIframe: "https://keonhacai.cat/iframe/",
 
         /* BACKGROUND CÁC SECTION KHÁC — KHÔNG BẮT BUỘC */
         sportsBg: "",
@@ -683,18 +694,18 @@
       ],
 
       reasons: [
-        { icon:"⚡", title:"Giao diện nhanh & trực quan", desc:"Bố cục ưu tiên nội dung quan trọng, CTA nổi bật và dễ scan trên màn hình nhỏ." },
-        { icon:"🛡️", title:"Cấu trúc rõ ràng", desc:"HTML semantic, heading hợp lý, section độc lập và dữ liệu tách khỏi giao diện." },
-        { icon:"📱", title:"Responsive", desc:"Tự điều chỉnh từ desktop xuống mobile mà vẫn giữ hierarchy và khoảng thở." },
-        { icon:"🎯", title:"CTA dễ thay đổi", desc:"Toàn bộ link đăng ký, đăng nhập, chơi ngay, thể thao và chi tiết gom trong config." },
-        { icon:"🧩", title:"Dễ nhân bản", desc:"Mỗi landing page chỉ cần đổi config, màu sắc, logo, hình ảnh và nội dung." },
-        { icon:"✨", title:"Animation vừa đủ", desc:"Hover, reveal và shine giúp trang sinh động mà không làm ảnh hưởng khả năng đọc." }
+        { icon:"⚡", title:"Giao diện siêu tốc & trực quan", desc:"Bố cục tối ưu giúp soi kèo và đặt cược chỉ trong vài thao tác. Tốc độ tải trang mượt mà, không lo giật lag ngay cả trong khung giờ cao điểm." },
+        { icon:"🛡️", title:"Bảo mật tuyệt đối", desc:"Cam kết bảo mật dữ liệu tuyệt đối với công nghệ mã hóa hiện đại. Mọi biến động kèo và lịch sử giao dịch đều được công khai rõ ràng." },
+        { icon:"📱", title:"Tương Thích Mọi Thiết Bị", desc:"Tự động tối ưu mượt mà trên cả điện thoại và máy tính. Đặt cược linh hoạt mọi lúc, mọi nơi mà không gò bó không gian." },
+        { icon:"🎯", title:"Tỷ Lệ Kèo Hấp Dẫn & Đa Dạng", desc:"Cập nhật tỷ lệ kèo real-time chính xác từng giây. Phủ sóng toàn bộ giải đấu lớn nhỏ với đa dạng loại kèo (Châu Á, Châu Âu, Tài Xỉu, Cược Xâu)." },
+        { icon:"🧩", title:"Ưu Đãi Khủng & Hoàn Trả Cao", desc:"Chương trình thưởng nạp hấp dẫn cho tân thủ cùng chính sách hoàn trả cược thể thao không giới hạn cực cao mỗi ngày." },
+        { icon:"✨", title:"Nạp Rút Siêu Tốc & Hỗ Trợ 24/7", desc:"Giao diện thanh toán nạp/rút tự động xử lý chỉ trong vài phút, kèm đội ngũ CSKH chuyên nghiệp túc trực hỗ trợ bạn mọi lúc." }
       ],
 
       reviews: [
-        { name:"Minh K.", role:"Người chơi", avatar:"MK", quote:"Bố cục dễ xem, phần thể thao nằm đúng trung tâm nên tìm trận nhanh.", stars:5 },
-        { name:"Hoàng T.", role:"Thành viên", avatar:"HT", quote:"Mình thích các thẻ game vì nhìn rõ từng nhóm và nút xem chi tiết.", stars:5 },
-        { name:"An P.", role:"Người dùng", avatar:"AP", quote:"Trên điện thoại vẫn khá gọn, CTA nổi bật mà không quá rối mắt.", stars:5 }
+        { name:"Minh K.", role:"Người chơi", avatar:"MK", quote:"Rút tiền cực nhanh, tầm 3-5 phút là về tài khoản. Kèo thể thao ở đây chuẩn, tỷ lệ ăn lại cao hơn mấy bên khác.", stars:5 },
+        { name:"Hoàng T.", role:"Thành viên", avatar:"HT", quote:"Kết nhất khoản cập nhật tỷ số real-time mượt mà, bấm đặt cược nhảy tiền ngay chứ không bị delay lag máy.", stars:5 },
+        { name:"An P.", role:"Người dùng", avatar:"AP", quote:"CSKH hỗ trợ nhiệt tình. Lần đầu nạp tiền chưa biết thao tác được các bạn hướng dẫn chi tiết chỉ trong 1 phút.", stars:5 }
       ]
     };
 
@@ -733,6 +744,12 @@
     setCssVar("--games-bg", SITE_CONFIG.assets.gamesBg);
     setCssVar("--reasons-bg", SITE_CONFIG.assets.reasonsBg);
     setCssVar("--reviews-bg", SITE_CONFIG.assets.reviewsBg);
+
+    /* Iframe scoreboard */
+    const scoreboardIframe = $(".scoreboard-iframe iframe");
+    if (scoreboardIframe && SITE_CONFIG.assets.scoreboardIframe) {
+      scoreboardIframe.src = SITE_CONFIG.assets.scoreboardIframe;
+    }
 
     /* Logo */
     const logoLink = $(".js-logo");
@@ -824,87 +841,11 @@
     `).join("");
 
     /* =========================================================
-       10) SCOREBOARD — TÁCH RIÊNG
+       10) SCOREBOARD
+       =========================================================
+       Dữ liệu tỷ số được tải trực tiếp từ iframe.
+       Không cần demo data / endpoint / JavaScript scoreboard.
        ========================================================= */
-    const SPORTS_CONFIG = {
-      provider: "demo",
-      refreshMs: 60000,
-
-      /* Endpoint JSON:
-         [
-           { league, icon, home, away, homeScore, awayScore, status }
-         ]
-      */
-      endpoint: "",
-
-      demo: [
-        { league:"UEFA", icon:"⚽", home:"Real Madrid", away:"Man City", homeScore:2, awayScore:1, status:"FT" },
-        { league:"UCL", icon:"⚽", home:"Barcelona", away:"Bayern", homeScore:1, awayScore:1, status:"LIVE" },
-        { league:"NBA", icon:"🏀", home:"Lakers", away:"Celtics", homeScore:108, awayScore:111, status:"Q4" },
-        { league:"ATP", icon:"🎾", home:"Player A", away:"Player B", homeScore:2, awayScore:1, status:"SET 3" }
-      ]
-    };
-
-    function renderScores(items, live = false){
-      const host = $("#scoreList");
-
-      host.innerHTML = items.slice(0, 5).map(match => `
-        <div class="match">
-          <div class="league">${match.icon || "🏆"}</div>
-
-          <div class="match-main">
-            <strong>${match.home} <span style="display:inline">vs</span> ${match.away}</strong>
-            <span>${match.league || "Sports"} • ${match.status || "Upcoming"}</span>
-          </div>
-
-          <div class="score">
-            ${match.homeScore ?? "-"} - ${match.awayScore ?? "-"}
-            <small>${match.status || ""}</small>
-          </div>
-        </div>
-      `).join("");
-
-      $("#scoreProvider").textContent = live ? SPORTS_CONFIG.provider.toUpperCase() : "DEMO";
-      $("#scoreStatus").textContent = live ? "Live feed" : "Demo data";
-      $("#scoreUpdated").textContent =
-        "Cập nhật: " +
-        new Date().toLocaleTimeString("vi-VN", {
-          hour:"2-digit",
-          minute:"2-digit"
-        });
-    }
-
-    async function loadScores(){
-      if(!SPORTS_CONFIG.endpoint){
-        renderScores(SPORTS_CONFIG.demo, false);
-        return;
-      }
-
-      try{
-        const response = await fetch(SPORTS_CONFIG.endpoint, {
-          headers:{Accept:"application/json"}
-        });
-
-        if(!response.ok) throw new Error("HTTP " + response.status);
-
-        const data = await response.json();
-        const items = Array.isArray(data)
-          ? data
-          : (data.matches || data.events || []);
-
-        if(!items.length) throw new Error("No matches");
-
-        renderScores(items, true);
-      }catch(error){
-        console.warn("Sports feed fallback:", error);
-        renderScores(SPORTS_CONFIG.demo, false);
-      }
-    }
-
-    loadScores();
-    if(SPORTS_CONFIG.endpoint && SPORTS_CONFIG.refreshMs > 0){
-      setInterval(loadScores, SPORTS_CONFIG.refreshMs);
-    }
 
     /* =========================================================
        11) REVEAL ANIMATION
