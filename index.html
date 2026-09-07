@@ -223,23 +223,6 @@
         var(--sports-right-bg),
         linear-gradient(160deg,#00a6d8,#062147 75%);
     }
-    .promo-card::before{
-      content:"";position:absolute;inset:0;
-      background:radial-gradient(circle at 75% 18%,rgba(97,216,255,.25),transparent 28%);
-      pointer-events:none
-    }
-    .promo-card::after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,transparent 28%,rgba(0,0,0,.28) 100%);
-      pointer-events:none
-    }
-    .promo-inner{position:relative;z-index:1}
-    .promo-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
-    .promo-card h3{
-      font-family:"Barlow Condensed";font-size:46px;line-height:.9;
-      text-transform:uppercase;margin:10px 0
-    }
-    .promo-card p{font-size:13px;color:rgba(255,255,255,.78);max-width:320px}
     .mini-btn{
       margin-top:16px;display:inline-flex;padding:9px 13px;border-radius:999px;
       background:#51d6ff;color:#052153;font-weight:900;font-size:12px;
@@ -487,14 +470,6 @@
         </div>
 
         <div class="sports-grid">
-          <!-- KHỐI ẢNH TRÁI: URL nằm ở SITE_CONFIG.assets.leftPromo -->
-          <article class="promo-card" data-reveal>
-            <div class="promo-inner">
-              <div class="promo-kicker">JUN88 Sports</div>
-              <h3>Catch<br>the game</h3>
-              <a class="mini-btn js-link" data-link="sports" href="#">XEM THỂ THAO →</a>
-            </div>
-          </article>
 
           <!-- KHU VỰC IFRAME TỶ SỐ -->
           <section class="scoreboard" data-reveal aria-label="Bảng tỷ số thể thao">
@@ -513,14 +488,6 @@
             </div>
           </section>
 
-          <!-- KHỐI ẢNH PHẢI: URL nằm ở SITE_CONFIG.assets.rightPromo -->
-          <article class="promo-card right" data-reveal>
-            <div class="promo-inner">
-              <div class="promo-kicker">Matchday</div>
-              <h3>Feel<br>the rush</h3>
-              <a class="mini-btn js-link" data-link="detail" href="#">XEM CHI TIẾT →</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -608,10 +575,6 @@
 
         /* SECTION 1 */
         heroBg: "https://i.pinimg.com/736x/e9/26/5f/e9265fbed7529fb4c80277965835abc5.jpg",
-
-        /* SECTION 3 — 2 KHỐI ẢNH HAI BÊN SCOREBOARD */
-        leftPromo: "https://hamonline.nl/wp-content/uploads/2026/09/cac-doi-tham-gia-c1.webp",
-        rightPromo: "https://hamonline.nl/wp-content/uploads/2026/09/giai-dau-c1-moi-nhat.webp",
 
         /* IFRAME TỶ SỐ */
         scoreboardIframe: "https://keonhacai.cat/iframe/",
@@ -738,8 +701,6 @@
        4) ẢNH — TẤT CẢ URL NẰM Ở SITE_CONFIG.assets
        ========================================================= */
     setCssVar("--hero-bg", SITE_CONFIG.assets.heroBg);
-    setCssVar("--sports-left-bg", SITE_CONFIG.assets.leftPromo);
-    setCssVar("--sports-right-bg", SITE_CONFIG.assets.rightPromo);
     setCssVar("--sports-bg", SITE_CONFIG.assets.sportsBg);
     setCssVar("--games-bg", SITE_CONFIG.assets.gamesBg);
     setCssVar("--reasons-bg", SITE_CONFIG.assets.reasonsBg);
