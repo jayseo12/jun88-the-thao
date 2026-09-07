@@ -102,8 +102,39 @@
     .games{background:#fff}
     .game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .game-card{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 14px 34px rgba(9,55,108,.08);transition:.25s ease}.game-card:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(9,55,108,.16)}
-    .game-visual{aspect-ratio:1.25/1;position:relative;overflow:hidden;background:linear-gradient(135deg,#0b76f6,#12d2ff)}
-    .game-visual::before{content:"";position:absolute;width:150px;height:150px;right:-40px;top:-45px;border-radius:50%;background:rgba(255,255,255,.17)}.game-visual::after{content:"";position:absolute;width:210px;height:110px;left:-35px;bottom:-35px;border-radius:50%;background:rgba(0,0,0,.14);transform:rotate(-12deg)}
+    .game-visual{
+    aspect-ratio:1.25/1;
+    position:relative;
+    overflow:hidden;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.game-visual::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(4,28,65,.05) 20%,
+        rgba(4,28,65,.55) 100%
+    );
+    z-index:0;
+}
+
+.g-badge{
+    position:absolute;
+    right:15px;
+    top:14px;
+    padding:7px 9px;
+    background:rgba(255,255,255,.88);
+    border-radius:999px;
+    color:#0a58a8;
+    font-size:10px;
+    font-weight:900;
+    z-index:2;
+}
     .g-icon{position:absolute;left:20px;bottom:18px;font-size:72px;filter:drop-shadow(0 12px 12px rgba(0,0,0,.18));z-index:1}.g-badge{position:absolute;right:15px;top:14px;padding:7px 9px;background:rgba(255,255,255,.85);border-radius:999px;color:#0a58a8;font-size:10px;font-weight:900;z-index:1}
     .game-body{padding:18px}.game-body h3{font-size:18px}.game-body p{font-size:12px;color:var(--muted);margin-top:6px}.game-body .link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;color:var(--primary);font-weight:900}
 
@@ -265,16 +296,71 @@
         description: 'JUN88 – Trải nghiệm thể thao, game bài, nổ hũ, bắn cá và nhiều trò chơi trực tuyến.',
         keywords: 'JUN88, thể thao, nổ hũ, bắn cá, game bài, xổ số, casino'
       },
-      games: [
-        { title:'Thể Thao', desc:'Theo dõi trận đấu và kèo thể thao nổi bật.', icon:'⚽', badge:'SPORTS', link:'sports', tone:'#0b76f6' },
-        { title:'Nổ Hũ', desc:'Kho slot nhiều chủ đề, hiệu ứng bắt mắt.', icon:'🎰', badge:'SLOT', link:'detail', tone:'#00a9cf' },
-        { title:'Bắn Cá', desc:'Săn boss, combo điểm và trải nghiệm sôi động.', icon:'🐠', badge:'ARCADE', link:'detail', tone:'#1d74e9' },
-        { title:'Game Bài', desc:'Các bàn game quen thuộc với giao diện hiện đại.', icon:'🃏', badge:'CARD', link:'detail', tone:'#0a2f76' },
-        { title:'Xổ Số', desc:'Chuyên mục kết quả và giải thưởng hấp dẫn.', icon:'🎯', badge:'LOTTERY', link:'detail', tone:'#06a4e7' },
-        { title:'Casino', desc:'Phong cách casino trực tuyến cao cấp.', icon:'♠️', badge:'CASINO', link:'detail', tone:'#0b76f6' },
-        { title:'Live Game', desc:'Không khí bàn live với trải nghiệm trực quan.', icon:'🎥', badge:'LIVE', link:'detail', tone:'#079bd0' },
-        { title:'Mini Game', desc:'Các game nhanh, gọn và dễ tiếp cận.', icon:'⚡', badge:'HOT', link:'detail', tone:'#143f9d' }
-      ],
+     games: [
+  {
+    title: 'Thể Thao',
+    desc: 'Theo dõi trận đấu và kèo thể thao nổi bật.',
+    image: 'https://productfeedtool.nl/wp-content/uploads/2026/07/the-thao-jun88-anh.webp',
+    badge: 'SPORTS',
+    link: 'sports'
+  },
+
+  {
+    title: 'Nổ Hũ',
+    desc: 'Kho slot nhiều chủ đề, hiệu ứng bắt mắt.',
+    image: 'images/game-no-hu.webp',
+    badge: 'SLOT',
+    link: 'detail'
+  },
+
+  {
+    title: 'Bắn Cá',
+    desc: 'Săn boss, combo điểm và trải nghiệm sôi động.',
+    image: 'images/game-ban-ca.webp',
+    badge: 'ARCADE',
+    link: 'detail'
+  },
+
+  {
+    title: 'Game Bài',
+    desc: 'Các bàn game quen thuộc với giao diện hiện đại.',
+    image: 'images/game-game-bai.webp',
+    badge: 'CARD',
+    link: 'detail'
+  },
+
+  {
+    title: 'Xổ Số',
+    desc: 'Chuyên mục kết quả và giải thưởng hấp dẫn.',
+    image: 'images/game-xo-so.webp',
+    badge: 'LOTTERY',
+    link: 'detail'
+  },
+
+  {
+    title: 'Casino',
+    desc: 'Phong cách casino trực tuyến cao cấp.',
+    image: 'images/game-casino.webp',
+    badge: 'CASINO',
+    link: 'detail'
+  },
+
+  {
+    title: 'Live Game',
+    desc: 'Không khí bàn live với trải nghiệm trực quan.',
+    image: 'images/game-live.webp',
+    badge: 'LIVE',
+    link: 'detail'
+  },
+
+  {
+    title: 'Mini Game',
+    desc: 'Các game nhanh, gọn và dễ tiếp cận.',
+    image: 'images/game-mini.webp',
+    badge: 'HOT',
+    link: 'detail'
+  }
+],
       reasons: [
         { icon:'⚡', title:'Giao diện nhanh & trực quan', desc:'Bố cục ưu tiên nội dung quan trọng, CTA nổi bật và scan tốt trên màn hình nhỏ.' },
         { icon:'🛡️', title:'Cấu trúc rõ ràng', desc:'HTML semantic, heading hợp lý, section độc lập và dữ liệu tách khỏi giao diện.' },
@@ -308,8 +394,8 @@
     SITE_CONFIG.games.forEach((g,i)=>{
       const card = document.createElement('article'); card.className='game-card'; card.dataset.reveal='';
       card.innerHTML = `
-        <div class="game-visual" style="background:linear-gradient(135deg,${g.tone},#06214f)">
-          <span class="g-badge">${g.badge}</span><span class="g-icon">${g.icon}</span>
+        <div class="game-visual" style="background-image:url('${g.image}')">
+        <span class="g-badge">${g.badge}</span>
         </div>
         <div class="game-body"><h3>${g.title}</h3><p>${g.desc}</p><a class="link js-link" data-link="${g.link}" href="#">Xem chi tiết →</a></div>`;
       gameGrid.appendChild(card);
