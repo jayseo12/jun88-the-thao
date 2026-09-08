@@ -22,18 +22,15 @@
   <meta name="twitter:description" content="Khám phá các game hot, trận đấu nổi bật và ưu đãi tại JUN88.">
   <meta name="twitter:image" content="https://example.com/og.jpg">
 
-  <!-- Font Chữ Cao Cấp: Plus Jakarta Sans (Văn bản) & Montserrat / Barlow Condensed (Tiêu đề) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* BỘ FONT CHỮ DỄ THAY ĐỔI */
       --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-heading: 'Barlow Condensed', 'Montserrat', sans-serif;
 
-      /* MÀU SẮC CHÍNH (Sẽ ghi đè tự động từ SITE_CONFIG) */
       --primary: #0b76f6;
       --primary-2: #15b9ff;
       --accent: #ffb800;
@@ -47,7 +44,6 @@
       --shadow: 0 20px 50px rgba(11, 61, 126, 0.12);
       --text-glow: 0 0 20px rgba(87, 212, 255, 0.5);
 
-      /* BACKGROUND URLS */
       --hero-bg: none;
       --sports-bg: none;
       --games-bg: none;
@@ -73,7 +69,6 @@
     .container { width: min(1300px, calc(100% - 32px)); margin-inline: auto; }
     .section { position: relative; padding: 70px 0; overflow: hidden; }
 
-    /* LỚP TRANG TRÍ MÀU SẮC NỀN */
     .section::before {
       content: "";
       position: absolute;
@@ -83,7 +78,6 @@
       pointer-events: none;
     }
 
-    /* EYEBROW / BADGE NHÃN TIÊU ĐỀ */
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
@@ -99,7 +93,6 @@
 
     h1, h2, h3, p { margin: 0; }
 
-    /* SECTION HEADERS (TỐI ƯU HIỂN THỊ CHỮ NỔI BẬT & ĐẦY ĐỦ DẤU) */
     .section-head {
       text-align: center; max-width: 860px; margin: 0 auto 46px;
       position: relative; z-index: 2;
@@ -107,7 +100,7 @@
     .section-head h2 {
       font-family: var(--font-heading);
       font-size: clamp(38px, 5.5vw, 64px); 
-      line-height: 1.2; /* Đảm bảo đủ chiều cao cho dấu câu */
+      line-height: 1.2;
       text-transform: uppercase; letter-spacing: -0.01em;
       margin: 16px 0 14px; color: var(--navy);
       font-weight: 900;
@@ -127,7 +120,6 @@
       max-width: 720px; margin: 0 auto;
     }
 
-    /* CHỮ HIỆU ỨNG TẠO ĐIỂM NHẤN */
     .text-gradient {
       background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
       -webkit-background-clip: text;
@@ -227,7 +219,6 @@
     }
     .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
     
-    /* BUTTON STYLING NỔI BẬT */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       min-height: 54px; padding: 0 30px; border-radius: 999px;
@@ -263,7 +254,7 @@
     }
 
     /* =========================
-       SECTION 3 — SPORTS (SCOREBOARD)
+       SECTION 2 — SPORTS (SCOREBOARD)
        ========================= */
     .sports {
       background:
@@ -313,7 +304,7 @@
     }
 
     /* =========================
-       SECTION 4 — GAMES
+       SECTION 3 — GAMES
        ========================= */
     .games {
       background:
@@ -362,7 +353,7 @@
     .game-card:hover .link { gap: 10px; color: #0056c6; }
 
     /* =========================
-       SECTION 5 — REASONS
+       SECTION 4 — REASONS
        ========================= */
     .reasons {
       background:
@@ -391,7 +382,7 @@
     .reason p { color: var(--muted); font-size: 14px; margin-top: 8px; font-weight: 500; }
 
     /* =========================
-       SECTION 6 — REVIEWS
+       SECTION 5 — REVIEWS
        ========================= */
     .reviews {
       background:
@@ -501,7 +492,7 @@
   </header>
 
   <main>
-    <!-- SECTION 3 — SPORTS (SCOREBOARD IFRAME) -->
+    <!-- SECTION 2 — SPORTS (SCOREBOARD IFRAME) -->
     <section class="section sports" id="sports">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -529,7 +520,7 @@
       </div>
     </section>
 
-    <!-- SECTION 4 — GAMES -->
+    <!-- SECTION 3 — GAMES -->
     <section class="section games" id="games">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -539,7 +530,7 @@
       </div>
     </section>
 
-    <!-- SECTION 5 — REASONS -->
+    <!-- SECTION 4 — REASONS -->
     <section class="section reasons" id="reasons">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -550,7 +541,7 @@
       </div>
     </section>
 
-    <!-- SECTION 6 — REVIEWS -->
+    <!-- SECTION 5 — REVIEWS -->
     <section class="section reviews" id="reviews">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -579,8 +570,7 @@
 
   <script>
     /* =========================================================
-       1) TRUNG TÂM CẤU HÌNH TRANG (SITE_CONFIG)
-       Dễ dàng chỉnh sửa, nhân bản cho site mới tại đây!
+       1) CẤU HÌNH TRANG (SITE_CONFIG)
        ========================================================= */
     const SITE_CONFIG = {
       brand: {
@@ -599,7 +589,7 @@
         bg: "#f4f8ff"
       },
 
-      /* TOÀN BỘ LINK CTA GOM VỀ 1 NƠI */
+      /* TOÀN BỘ LINK CTA */
       links: {
         register: "https://tinyurl.com/dangnhap-sin88",
         login: "https://tinyurl.com/dangnhap-sin88",
@@ -607,7 +597,7 @@
         sports: "#sports"
       },
 
-      /* TOÀN BỘ HÌNH ẢNH VÀ NỀN DỄ DÀNG THAY THẾ */
+      /* TOÀN BỘ HÌNH ẢNH VÀ NỀN */
       assets: {
         logo: "https://hamonline.nl/wp-content/uploads/2026/07/jun88-logo-1.webp",
         heroBg: "https://i.pinimg.com/1200x/5a/c7/90/5ac790da041ae39454d33ac067b2346e.jpg",
